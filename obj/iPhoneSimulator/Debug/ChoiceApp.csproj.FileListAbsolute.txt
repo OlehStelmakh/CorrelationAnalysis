@@ -1,0 +1,17 @@
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/bin/iPhoneSimulator/Debug/ChoiceApp.exe
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/bin/iPhoneSimulator/Debug/ChoiceApp.pdb
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/bin/iPhoneSimulator/Debug/Xamarin.Essentials.pdb
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/ChoiceApp.csprojAssemblyReference.cache
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/ChoiceApp.csproj.CopyComplete
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/ChoiceApp.exe
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/ChoiceApp.pdb
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/bin/iPhoneSimulator/Debug/OxyPlot.dll
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/bin/iPhoneSimulator/Debug/OxyPlot.pdb
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/bin/iPhoneSimulator/Debug/OxyPlot.Xamarin.iOS.dll
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/actool/_PartialAppManifest.items
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/actool/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/coremlc/_PartialAppManifest.items
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/coremlc/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/optimized/
