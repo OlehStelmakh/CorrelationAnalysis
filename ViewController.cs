@@ -106,7 +106,6 @@ namespace ChoiceApp
                 SwitchZScore.On = true;
                 SwitchStandDev.On = true;
                 SwitchMean.On = true;
-                accessForNext = true;
                 sufficient();
             }
             else

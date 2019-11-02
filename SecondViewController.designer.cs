@@ -16,6 +16,10 @@ namespace ChoiceApp
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelEighth { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelFifth { get; set; }
 
         [Outlet]
@@ -32,11 +36,19 @@ namespace ChoiceApp
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelSeventh { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelSixth { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelThird { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField TextFieldEighth { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -56,6 +68,10 @@ namespace ChoiceApp
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField TextFieldSeventh { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField TextFieldSixth { get; set; }
 
         [Outlet]
@@ -64,6 +80,11 @@ namespace ChoiceApp
 
         void ReleaseDesignerOutlets ()
         {
+            if (LabelEighth != null) {
+                LabelEighth.Dispose ();
+                LabelEighth = null;
+            }
+
             if (LabelFifth != null) {
                 LabelFifth.Dispose ();
                 LabelFifth = null;
@@ -84,6 +105,11 @@ namespace ChoiceApp
                 LabelSecond = null;
             }
 
+            if (LabelSeventh != null) {
+                LabelSeventh.Dispose ();
+                LabelSeventh = null;
+            }
+
             if (LabelSixth != null) {
                 LabelSixth.Dispose ();
                 LabelSixth = null;
@@ -92,6 +118,11 @@ namespace ChoiceApp
             if (LabelThird != null) {
                 LabelThird.Dispose ();
                 LabelThird = null;
+            }
+
+            if (TextFieldEighth != null) {
+                TextFieldEighth.Dispose ();
+                TextFieldEighth = null;
             }
 
             if (TextFieldFifth != null) {
@@ -112,6 +143,11 @@ namespace ChoiceApp
             if (TextFieldSecond != null) {
                 TextFieldSecond.Dispose ();
                 TextFieldSecond = null;
+            }
+
+            if (TextFieldSeventh != null) {
+                TextFieldSeventh.Dispose ();
+                TextFieldSeventh = null;
             }
 
             if (TextFieldSixth != null) {
