@@ -118,6 +118,7 @@
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
+        <Folder Include="Calculations\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -155,6 +156,9 @@
         <Compile Include="ThirdViewController.designer.cs">
           <DependentUpon>ThirdViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="Calculations\CalculateFirstVariant.cs" />
+        <Compile Include="Calculations\CalculateSecondVariant.cs" />
+        <Compile Include="Calculations\CalculateThirdVariant.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

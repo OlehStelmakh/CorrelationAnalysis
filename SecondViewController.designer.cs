@@ -16,6 +16,10 @@ namespace ChoiceApp
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ButtonSubmit { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelEighth { get; set; }
 
         [Outlet]
@@ -82,8 +86,17 @@ namespace ChoiceApp
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField TextFieldThird { get; set; }
 
+        [Action ("forEditingAFields:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void forEditingAFields (UIKit.UITextField sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (ButtonSubmit != null) {
+                ButtonSubmit.Dispose ();
+                ButtonSubmit = null;
+            }
+
             if (LabelEighth != null) {
                 LabelEighth.Dispose ();
                 LabelEighth = null;

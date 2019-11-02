@@ -25,6 +25,7 @@ namespace ChoiceApp
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            calculate();
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -32,6 +33,21 @@ namespace ChoiceApp
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        private void calculate()
+        {
+            if (variantThatChecked==1) {
+
+            }
+            else if (variantThatChecked == 2)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using OxyPlot;
@@ -23,11 +24,15 @@ namespace ChoiceApp
         private bool thirdVariandChecked { set; get; }
 
         public int amountOfFields { set; get; }
-       
+
+        private UITextField[] textFields { set; get; }
+        private List<UITextField> visibleFields { set; get; }
+
+
 
         public SecondViewController(IntPtr handle) : base(handle)
         {
-            
+            textFields = new UITextField[] { TextFieldFirst, TextFieldSecond, TextFieldThird, TextFieldFourth, TextFieldFifth, TextFieldSixth, TextFieldSeventh, TextFieldEighth };
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -68,6 +73,8 @@ namespace ChoiceApp
         {
             base.ViewDidLoad();
             makeVisibleTextFields();
+            bad("One or more fields is empty!");
+
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -77,9 +84,12 @@ namespace ChoiceApp
             // Release any cached data, images, etc that aren't in use.
         }
 
+        
+
         public void makeVisibleTextFields()
         {
             determineVariant();
+            visibleFields = new List<UITextField>();
             if (firstVariantChecked)
             {
                 edit(LabelFirst, TextFieldFirst, "x: ");
@@ -132,6 +142,8 @@ namespace ChoiceApp
             label.Text = name;
             label.Hidden = false;
             field.Hidden = false;
+            visibleFields.Add(field);
+
         }
 
         public double[] readData(UITextField textField)
@@ -147,14 +159,16 @@ namespace ChoiceApp
             string[] array = textField.Text.Trim().Split(" ");
             double[] numbers = array.Select(x => TryParseInTextField(x)).ToArray();
             numbers = numbers.Where(x => Math.Abs(x - int.MinValue) > 0.1).ToArray();
-            if (numbers.Length>1)
+            if (numbers.Length > 1)
             {
                 LabelMessage.Text = "More than one value is entered in one of the fields. " +
                         "The first value will be applied.";
                 LabelMessage.TextColor = UIColor.SystemRedColor;
                 textField.Text = numbers[0].ToString();
             }
-            return numbers[0];
+            return numbers[0]; 
+            
+            
         }
 
         public static double TryParseInTextField(string a)
@@ -169,6 +183,44 @@ namespace ChoiceApp
             {
                 return int.MinValue;
             }
+        }
+
+        partial void forEditingAFields(UITextField sender)
+        {
+
+            bool empty = false;
+            for (int i=0;i<visibleFields.Count;i++)
+            {
+                if (String.IsNullOrWhiteSpace(visibleFields[i].Text))
+                {
+                    empty = true;
+                    break;
+                }
+            }
+            if(empty)
+            {
+                bad("One or more fields is empty!");
+            }
+            else
+            {
+                good();
+
+
+            }
+        }
+
+        public void good()
+        {
+            LabelMessage.Text = "Everything is good!";
+            LabelMessage.TextColor = UIColor.SystemGreenColor;
+            ButtonSubmit.Enabled = true;
+        }
+
+        public void bad(string message)
+        {
+            LabelMessage.Text = message;
+            LabelMessage.TextColor = UIColor.SystemRedColor;
+            ButtonSubmit.Enabled = false;
         }
     }
 }
