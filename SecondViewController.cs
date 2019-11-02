@@ -219,9 +219,13 @@ namespace ChoiceApp
                 {
                     this.numbersX = readData(TextFieldFirst);
                     this.numbersY = readData(TextFieldSecond);
-                    if (numbersX.Length!=numbersY.Length)
+                    if (numbersX.Length != numbersY.Length)
                     {
                         bad("The amount of numbers in the series is not the same");
+                    }
+                    else if (numbersX.Length == numbersY.Length && numbersX.Length== 1)
+                    {
+                        bad("One point is not enough");
                     }
                 }
                 else if (secondVarintChecked)

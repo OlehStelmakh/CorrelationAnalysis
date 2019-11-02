@@ -9,6 +9,9 @@ namespace ChoiceApp
 {
     public partial class PlotViewController2 : UIViewController
     {
+        public double b0YonX { get; set; }
+        public double b1YonX { get; set; }
+
         public PlotViewController2(IntPtr handle) : base(handle)
         {
             this.View = new PlotView
@@ -61,8 +64,11 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            series2.Points.Add(new DataPoint(1.0, 6.0));
-            series2.Points.Add(new DataPoint(2.4, 2.1));
+            for (double x = 0; x < 10; x += 0.2)
+            {
+                double y = b0YonX + b1YonX * x;
+                series2.Points.Add(new DataPoint(x, y));
+            }
 
             series1.Points.Add(new DataPoint(0.0, 6.0));
             series1.Points.Add(new DataPoint(1.4, 2.1));
