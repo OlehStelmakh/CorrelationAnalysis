@@ -25,10 +25,19 @@ namespace ChoiceApp
 
         public int amountOfFields { set; get; }
 
+        private double[] numbersX { set; get; }
+        private double[] numbersY { set; get; }
+        private double Cov { set; get; }
+        private double Sx { set; get; }
+        private double Sy { set; get; }
+        private int amount { set; get; }
+        private double ZScoreX { set; get; }
+        private double ZScoreY { set; get; }
+        private double MeanX { set; get; }
+        private double MeanY { set; get; }
+
         private UITextField[] textFields { set; get; }
         private List<UITextField> visibleFields { set; get; }
-
-
 
         public SecondViewController(IntPtr handle) : base(handle)
         {
@@ -41,33 +50,35 @@ namespace ChoiceApp
             var thirdViewController = segue.DestinationViewController as ThirdViewController;
             if (firstVariantChecked)
             {
-                thirdViewController.numbersX = readData(TextFieldFirst);
-                thirdViewController.numbersY = readData(TextFieldSecond);
+                thirdViewController.numbersX = this.numbersX;
+                thirdViewController.numbersY = this.numbersY;
                 thirdViewController.variantThatChecked = 1;
             }
             else if (secondVarintChecked)
             {
-                thirdViewController.Cov = readOneNumber(TextFieldFirst);
-                thirdViewController.Sx = readOneNumber(TextFieldThird);
-                thirdViewController.Sy = readOneNumber(TextFieldFourth);
-                thirdViewController.MeanX = readOneNumber(TextFieldFifth);
-                thirdViewController.MeanY = readOneNumber(TextFieldSixth);
+                thirdViewController.Cov = this.Cov;
+                thirdViewController.Sx = this.Sx;
+                thirdViewController.Sy = this.Sy;
+                thirdViewController.MeanX = this.MeanX;
+                thirdViewController.MeanY = this.MeanY;
                 thirdViewController.variantThatChecked = 2;
 
             }
-            else if(thirdVariandChecked)
+            else if (thirdVariandChecked)
             {
-                thirdViewController.amount =Convert.ToInt32(readOneNumber(TextFieldFirst));
-                thirdViewController.Sx = readOneNumber(TextFieldThird);
-                thirdViewController.Sy = readOneNumber(TextFieldFourth);
-                thirdViewController.MeanX = readOneNumber(TextFieldFifth);
-                thirdViewController.MeanY = readOneNumber(TextFieldSixth);
-                thirdViewController.ZScoreX = readOneNumber(TextFieldSeventh);
-                thirdViewController.ZScoreY = readOneNumber(TextFieldEighth);
+                thirdViewController.amount = this.amount;
+                thirdViewController.Sx = this.Sx;
+                thirdViewController.Sy = this.Sy;
+                thirdViewController.MeanX = this.MeanX;
+                thirdViewController.MeanY = this.MeanY;
+                thirdViewController.ZScoreX = this.ZScoreX;
+                thirdViewController.ZScoreY = this.ZScoreY;
                 thirdViewController.variantThatChecked = 3;
             }
-            
+
         }
+
+        
 
         public override void ViewDidLoad()
         {
@@ -164,7 +175,6 @@ namespace ChoiceApp
                 LabelMessage.Text = "More than one value is entered in one of the fields. " +
                         "The first value will be applied.";
                 LabelMessage.TextColor = UIColor.SystemRedColor;
-                textField.Text = numbers[0].ToString();
             }
             return numbers[0]; 
             
@@ -205,7 +215,30 @@ namespace ChoiceApp
             {
                 good();
 
+                if (firstVariantChecked)
+                {
+                    this.numbersX = this.numbersX;
+                    this.numbersY = readData(TextFieldSecond);
+                }
+                else if (secondVarintChecked)
+                {
+                    this.Cov = readOneNumber(TextFieldFirst);
+                    this.Sx = readOneNumber(TextFieldThird);
+                    this.Sy = readOneNumber(TextFieldFourth);
+                    this.MeanX = readOneNumber(TextFieldFifth);
+                    this.MeanY = readOneNumber(TextFieldSixth);
 
+                }
+                else if (thirdVariandChecked)
+                {
+                    this.amount = Convert.ToInt32(readOneNumber(TextFieldFirst));
+                    this.Sx = readOneNumber(TextFieldThird);
+                    this.Sy = readOneNumber(TextFieldFourth);
+                    this.MeanX = readOneNumber(TextFieldFifth);
+                    this.MeanY = readOneNumber(TextFieldSixth);
+                    this.ZScoreX = readOneNumber(TextFieldSeventh);
+                    this.ZScoreY = readOneNumber(TextFieldEighth);
+                }
             }
         }
 
