@@ -44,65 +44,26 @@ namespace ChoiceApp
             determineVariant();
             if (firstVariantChecked)
             {
-                LabelFirst.Text = "X: ";
-                LabelFirst.Hidden = false;
-                TextFieldFirst.Hidden = false;
-
-                LabelSecond.Text = "Y: ";
-                LabelSecond.Hidden = false;
-                TextFieldSecond.Hidden = false;
+                edit(LabelFirst, TextFieldFirst, "x: ");
+                edit(LabelSecond, TextFieldSecond, "y: ");
             }
             else if (secondVarintChecked)
             {
-                LabelFirst.Text = "Covariance(X,Y): ";
-                LabelFirst.Hidden = false;
-                TextFieldFirst.Hidden = false;
-
-                LabelThird.Text = "Sx: ";
-                LabelThird.Hidden = false;
-                TextFieldThird.Hidden = false;
-
-                LabelFourth.Text = "Sy: ";
-                LabelFourth.Hidden = false;
-                TextFieldFourth.Hidden = false;
-
-                LabelFifth.Text = "Mean x: ";
-                LabelFifth.Hidden = false;
-                TextFieldFifth.Hidden = false;
-
-                LabelSixth.Text = "Mean y: ";
-                LabelSixth.Hidden = false;
-                TextFieldSixth.Hidden = false;
+                edit(LabelFirst, TextFieldFirst, "Covariance(x,y): ");
+                edit(LabelThird, TextFieldThird, "Sx: ");
+                edit(LabelFourth, TextFieldFourth, "Sy: ");
+                edit(LabelFifth, TextFieldFifth, "Mean x: ");
+                edit(LabelSixth, TextFieldSixth, "Mean y: ");
             }
             else
             {
-                LabelFirst.Text = "Amount: ";
-                LabelFirst.Hidden = false;
-                TextFieldFirst.Hidden = false;
-
-                LabelThird.Text = "Sx: ";
-                LabelThird.Hidden = false;
-                TextFieldThird.Hidden = false;
-
-                LabelFourth.Text = "Sy: ";
-                LabelFourth.Hidden = false;
-                TextFieldFourth.Hidden = false;
-
-                LabelFifth.Text = "Mean x: ";
-                LabelFifth.Hidden = false;
-                TextFieldFifth.Hidden = false;
-
-                LabelSixth.Text = "Mean y: ";
-                LabelSixth.Hidden = false;
-                TextFieldSixth.Hidden = false;
-
-                LabelSeventh.Text = "Z-score x: ";
-                LabelSeventh.Hidden = false;
-                TextFieldSeventh.Hidden = false;
-
-                LabelEighth.Text = "Z-score y: ";
-                LabelEighth.Hidden = false;
-                TextFieldEighth.Hidden = false;
+                edit(LabelFirst, TextFieldFirst, "Amount: ");
+                edit(LabelThird, TextFieldThird, "Sx: ");
+                edit(LabelFourth, TextFieldFourth, "Sy: ");
+                edit(LabelFifth, TextFieldFifth, "Mean x: ");
+                edit(LabelSixth, TextFieldSixth, "Mean y: ");
+                edit(LabelSeventh, TextFieldSeventh, "Z-score x: ");
+                edit(LabelEighth, TextFieldEighth, "Z-score y: ");
             }
             
         }
@@ -123,6 +84,13 @@ namespace ChoiceApp
                 return;
             }
             thirdVariandChecked = true;
+        }
+
+        private void edit(UILabel label, UITextField field, string name) 
+        {
+            label.Text = name;
+            label.Hidden = false;
+            field.Hidden = false;
         }
     }
 }
