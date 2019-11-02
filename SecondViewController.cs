@@ -217,8 +217,12 @@ namespace ChoiceApp
 
                 if (firstVariantChecked)
                 {
-                    this.numbersX = this.numbersX;
+                    this.numbersX = readData(TextFieldFirst);
                     this.numbersY = readData(TextFieldSecond);
+                    if (numbersX.Length!=numbersY.Length)
+                    {
+                        bad("The amount of numbers in the series is not the same");
+                    }
                 }
                 else if (secondVarintChecked)
                 {

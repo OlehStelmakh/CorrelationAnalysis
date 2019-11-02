@@ -1,6 +1,6 @@
 ﻿// WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
@@ -11,11 +11,73 @@ using UIKit;
 
 namespace ChoiceApp
 {
-    [Register("ThirdViewController")]
+    [Register ("ThirdViewController")]
     partial class ThirdViewController
     {
-        void ReleaseDesignerOutlets()
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelFifth { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelFirst { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelSecond { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelSeventh { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelSixth { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelThird { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LebelFourth { get; set; }
+
+        void ReleaseDesignerOutlets ()
         {
+            if (LabelFifth != null) {
+                LabelFifth.Dispose ();
+                LabelFifth = null;
+            }
+
+            if (LabelFirst != null) {
+                LabelFirst.Dispose ();
+                LabelFirst = null;
+            }
+
+            if (LabelSecond != null) {
+                LabelSecond.Dispose ();
+                LabelSecond = null;
+            }
+
+            if (LabelSeventh != null) {
+                LabelSeventh.Dispose ();
+                LabelSeventh = null;
+            }
+
+            if (LabelSixth != null) {
+                LabelSixth.Dispose ();
+                LabelSixth = null;
+            }
+
+            if (LabelThird != null) {
+                LabelThird.Dispose ();
+                LabelThird = null;
+            }
+
+            if (LebelFourth != null) {
+                LebelFourth.Dispose ();
+                LebelFourth = null;
+            }
         }
     }
 }
