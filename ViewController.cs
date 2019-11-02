@@ -6,7 +6,6 @@ namespace ChoiceApp
 {
     public partial class ViewController : UIViewController
     {
-        private bool accessForNext = false;
 
         public ViewController(IntPtr handle) : base(handle)
         {
@@ -28,11 +27,12 @@ namespace ChoiceApp
         {
             base.PrepareForSegue(segue, sender);
             var secondViewController = segue.DestinationViewController as SecondViewController;
-            secondViewController.firstIsChecked = SwitchXY.On;
-            secondViewController.secondIsChecked = SwitchCov.On;
-            secondViewController.thirdIsChecked = SwitchStandDev.On;
-            secondViewController.fourthIsChecked = SwitchAmount.On;
-            secondViewController.fifthIsChecked = SwitchZScore.On;
+            secondViewController.XYIsChecked = SwitchXY.On;
+            secondViewController.CovIsChecked = SwitchCov.On;
+            secondViewController.StandDevIsChecked = SwitchStandDev.On;
+            secondViewController.AmountIsChecked = SwitchAmount.On;
+            secondViewController.ZScoreIsChecked = SwitchZScore.On;
+            secondViewController.MeanIsChecked = SwitchMean.On;
         }
 
         //додати події
@@ -114,9 +114,6 @@ namespace ChoiceApp
                 SwitchZScore.On = false;
                 notSufficient();
             }
-           
-            
-
         }
 
         private void notSufficient()
@@ -134,43 +131,5 @@ namespace ChoiceApp
             LabelSufficient.Hidden = false;
             ButtonFirstView.Enabled = true;
         }
-
-        /*
-        //Mean of X and Y
-        partial void UISwitch16249_TouchUpInside(UISwitch sender)
-        {
-            if (SwitchMean.On)
-            {
-                SwitchXY.On = false;
-                LabelSufficient.Hidden = true;
-            }
-            else
-            {
-                SwitchCov.On = false;
-                SwitchStandDev.On = false;
-                SwitchZScore.On = false;
-                SwitchAmount.On = false;
-                LabelSufficient.Hidden = true;
-            }
-        }
-
-        //Standart dev
-        partial void UISwitch2657_TouchUpInside(UISwitch sender)
-        {
-            if (SwitchStandDev.On)
-            {
-                SwitchXY.On = false;
-                LabelSufficient.Hidden = true;
-            }
-            else
-            {
-                SwitchCov.On = false;
-                SwitchMean.On = false;
-                SwitchZScore.On = false;
-                SwitchAmount.On = false;
-                LabelSufficient.Hidden = true;
-            }
-        }
-        */
     }
 }

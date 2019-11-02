@@ -9,11 +9,12 @@ namespace ChoiceApp
 {
     public partial class SecondViewController : UIViewController
     {
-        public bool firstIsChecked { set; get; }
-        public bool secondIsChecked { set; get; }
-        public bool thirdIsChecked { set; get; }
-        public bool fourthIsChecked { set; get; }
-        public bool fifthIsChecked { set; get; }
+        public bool XYIsChecked { set; get; }
+        public bool CovIsChecked { set; get; }
+        public bool StandDevIsChecked { set; get; }
+        public bool AmountIsChecked { set; get; }
+        public bool ZScoreIsChecked { set; get; }
+        public bool MeanIsChecked { set; get; }
        
 
         public SecondViewController(IntPtr handle) : base(handle)
@@ -36,15 +37,10 @@ namespace ChoiceApp
 
         public void makeVisibleTextFields()
         {
-            bool[] checkedOrNot = { firstIsChecked, secondIsChecked, thirdIsChecked, fourthIsChecked, fifthIsChecked };
+            bool[] checkedOrNot = { XYIsChecked, CovIsChecked, StandDevIsChecked, AmountIsChecked, ZScoreIsChecked, MeanIsChecked };
             UITextField[] textFields = { TextFieldFirst, TextFieldSecond, TextFieldThird, TextFieldFourth, TextFieldFifth, TextFieldSixth };
             int counter = 0;
-            for (int i =0; i<checkedOrNot.Length; i++) 
-            {
-                if (checkedOrNot[i] && (i == 1 || i == 3)) { counter++; }
-                else { counter += 2; }
-            }
-
+            
         }
     }
 }
