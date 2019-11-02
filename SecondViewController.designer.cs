@@ -32,6 +32,10 @@ namespace ChoiceApp
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelMessage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelSecond { get; set; }
 
         [Outlet]
@@ -98,6 +102,11 @@ namespace ChoiceApp
             if (LabelFourth != null) {
                 LabelFourth.Dispose ();
                 LabelFourth = null;
+            }
+
+            if (LabelMessage != null) {
+                LabelMessage.Dispose ();
+                LabelMessage = null;
             }
 
             if (LabelSecond != null) {
