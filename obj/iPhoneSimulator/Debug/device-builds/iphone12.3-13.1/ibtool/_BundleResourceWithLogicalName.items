@@ -22,6 +22,11 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/26523-view-26524.nib">
+      <LogicalName>Main.storyboardc/26523-view-26524.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/UIViewController-210.nib">
       <LogicalName>Main.storyboardc/UIViewController-210.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -37,13 +42,13 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/UIViewController-7457.nib">
-      <LogicalName>Main.storyboardc/UIViewController-7457.nib</LogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/210-view-211.nib">
+      <LogicalName>Main.storyboardc/210-view-211.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/210-view-211.nib">
-      <LogicalName>Main.storyboardc/210-view-211.nib</LogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/UIViewController-26523.nib">
+      <LogicalName>Main.storyboardc/UIViewController-26523.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -64,11 +69,6 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/UIViewController-3496.nib">
       <LogicalName>Main.storyboardc/UIViewController-3496.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/7457-view-7458.nib">
-      <LogicalName>Main.storyboardc/7457-view-7458.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>

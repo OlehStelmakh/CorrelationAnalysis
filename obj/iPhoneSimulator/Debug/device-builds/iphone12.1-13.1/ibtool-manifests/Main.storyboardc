@@ -8,21 +8,6 @@
 	<dict/>
 	<key>com.apple.ibtool.document.warnings</key>
 	<dict>
-		<key>1381</key>
-		<array>
-			<dict>
-				<key>affected-objects</key>
-				<array>
-					<string>1381</string>
-				</array>
-				<key>message</key>
-				<string>Push segues are deprecated since iOS 8.0</string>
-				<key>type</key>
-				<string>IBIssueTypeDeprecated</string>
-				<key>type-value</key>
-				<integer>7</integer>
-			</dict>
-		</array>
 		<key>204</key>
 		<array>
 			<dict>
@@ -32,6 +17,66 @@
 				</array>
 				<key>message</key>
 				<string>Automatically Adjusts Font requires using a Dynamic Type text style</string>
+				<key>type</key>
+				<string>IBIssueTypeUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
+		<key>23384</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>23384</string>
+				</array>
+				<key>message</key>
+				<string>Push segues are deprecated since iOS 8.0</string>
+				<key>type</key>
+				<string>IBIssueTypeDeprecated</string>
+				<key>type-value</key>
+				<integer>7</integer>
+			</dict>
+		</array>
+		<key>26737</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>26737</string>
+				</array>
+				<key>message</key>
+				<string>Push segues are deprecated since iOS 8.0</string>
+				<key>type</key>
+				<string>IBIssueTypeDeprecated</string>
+				<key>type-value</key>
+				<integer>7</integer>
+			</dict>
+		</array>
+		<key>3496</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>3496</string>
+				</array>
+				<key>message</key>
+				<string>???Plot View Controller2??? is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<key>type</key>
+				<string>IBIssueTypeUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
+		<key>7565</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>7565</string>
+				</array>
+				<key>message</key>
+				<string>???Plot View Controller1??? is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
 				<key>type</key>
 				<string>IBIssueTypeUnsupportedConfiguration</string>
 				<key>type-value</key>

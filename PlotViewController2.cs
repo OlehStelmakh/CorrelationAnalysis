@@ -11,17 +11,22 @@ namespace ChoiceApp
     {
         public double b0YonX { get; set; }
         public double b1YonX { get; set; }
+        public double newB1YonX { set; get; }
+        public double newB0YonX { set; get; }
+        public double[] numbersX { set; get; }
+        public double[] numbersY { set; get; }
 
         public PlotViewController2(IntPtr handle) : base(handle)
+        {
+            
+        }
+
+        public override void ViewDidLoad()
         {
             this.View = new PlotView
             {
                 Model = createPlotModel(),
             };
-        }
-
-        public override void ViewDidLoad()
-        {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
         }
@@ -34,10 +39,10 @@ namespace ChoiceApp
 
         private PlotModel createPlotModel()
         {
-            OxyThickness thickness = new OxyThickness(25, 70, 15, 40);
+            OxyThickness thickness = new OxyThickness(35, 70, 15, 40);
             var plotModel = new PlotModel { Title = "OxyPlot Demo", PlotMargins= thickness };
             plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom });
-            plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Maximum = 10, Minimum = 0 });
+            plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left });
 
             var series1 = new LineSeries
             {
@@ -52,12 +57,17 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
+            for (int i=0;i<numbersX.Length; i++)
+            {
+                series1.Points.Add(new DataPoint(numbersX[i], numbersY[i]));
+            }
+
             var series2 = new LineSeries
             {
-                Title = "\nЛінія регресії",
+                Title = "Лінійна залежність",
                 StrokeThickness = 3,
                 LineStyle = LineStyle.Automatic,
-                MarkerType = MarkerType.Circle,
+                MarkerType = MarkerType.None,
                 MarkerSize = 5,
                 MarkerStroke = OxyColors.White,
                 MarkerFill = OxyColors.Automatic,
@@ -70,16 +80,27 @@ namespace ChoiceApp
                 series2.Points.Add(new DataPoint(x, y));
             }
 
-            series1.Points.Add(new DataPoint(0.0, 6.0));
-            series1.Points.Add(new DataPoint(1.4, 2.1));
-            series1.Points.Add(new DataPoint(2.0, 4.2));
-            series1.Points.Add(new DataPoint(3.3, 2.3));
-            series1.Points.Add(new DataPoint(4.7, 7.4));
-            series1.Points.Add(new DataPoint(6.0, 6.2));
-            series1.Points.Add(new DataPoint(8.9, 8.9));
+            var series3 = new LineSeries
+            {
+                Title = "Експоненційна зал",
+                StrokeThickness = 3,
+                LineStyle = LineStyle.Automatic,
+                MarkerType = MarkerType.None,
+                MarkerSize = 5,
+                MarkerStroke = OxyColors.White,
+                MarkerFill = OxyColors.Automatic,
+                MarkerStrokeThickness = 1.5,
+            };
 
-            plotModel.Series.Add(series1);
+            for (double x=0; x<10; x+=0.2)
+            {
+                double y = Math.Pow(10, newB1YonX * x + newB0YonX);
+                series3.Points.Add(new DataPoint(x, y));
+            }
+            
             plotModel.Series.Add(series2);
+            plotModel.Series.Add(series3);
+            plotModel.Series.Add(series1);
             return plotModel;
         }
     }

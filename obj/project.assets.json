@@ -343,11 +343,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/ChoiceApp.csproj",
+      "projectUniqueName": "/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/ChoiceApp.csproj",
       "projectName": "ChoiceApp",
-      "projectPath": "/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/ChoiceApp.csproj",
+      "projectPath": "/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/ChoiceApp.csproj",
       "packagesPath": "/Users/olehstelmakh/.nuget/packages/",
-      "outputPath": "/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/obj/",
+      "outputPath": "/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

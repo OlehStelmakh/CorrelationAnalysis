@@ -8,21 +8,6 @@
 	<dict/>
 	<key>com.apple.ibtool.document.warnings</key>
 	<dict>
-		<key>16005</key>
-		<array>
-			<dict>
-				<key>affected-objects</key>
-				<array>
-					<string>16005</string>
-				</array>
-				<key>message</key>
-				<string>Push segues are deprecated since iOS 8.0</string>
-				<key>type</key>
-				<string>IBIssueTypeDeprecated</string>
-				<key>type-value</key>
-				<integer>7</integer>
-			</dict>
-		</array>
 		<key>204</key>
 		<array>
 			<dict>
@@ -53,12 +38,12 @@
 				<integer>7</integer>
 			</dict>
 		</array>
-		<key>7557</key>
+		<key>26737</key>
 		<array>
 			<dict>
 				<key>affected-objects</key>
 				<array>
-					<string>7557</string>
+					<string>26737</string>
 				</array>
 				<key>message</key>
 				<string>Push segues are deprecated since iOS 8.0</string>
@@ -68,12 +53,27 @@
 				<integer>7</integer>
 			</dict>
 		</array>
-		<key>9244</key>
+		<key>27846</key>
 		<array>
 			<dict>
 				<key>affected-objects</key>
 				<array>
-					<string>9244</string>
+					<string>27846</string>
+				</array>
+				<key>message</key>
+				<string>Push segues are deprecated since iOS 8.0</string>
+				<key>type</key>
+				<string>IBIssueTypeDeprecated</string>
+				<key>type-value</key>
+				<integer>7</integer>
+			</dict>
+		</array>
+		<key>29380</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>29380</string>
 				</array>
 				<key>message</key>
 				<string>Push segues are deprecated since iOS 8.0</string>

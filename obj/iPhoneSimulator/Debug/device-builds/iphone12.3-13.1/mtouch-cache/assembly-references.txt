@@ -1,4 +1,4 @@
-/Users/olehstelmakh/Projects/ChoiceApp/ChoiceApp/bin/iPhoneSimulator/Debug/ChoiceApp.exe
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhoneSimulator/Debug/ChoiceApp.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/13.4.0.2/lib/mono/Xamarin.iOS/mscorlib.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/13.4.0.2/lib/mono/Xamarin.iOS/../../64bits/Xamarin.iOS.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/13.4.0.2/lib/mono/Xamarin.iOS/System.dll

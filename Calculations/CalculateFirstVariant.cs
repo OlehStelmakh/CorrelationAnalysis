@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UIKit;
 
 namespace ChoiceApp.Calculations
@@ -112,5 +113,10 @@ namespace ChoiceApp.Calculations
             label.Text = $"X on Y: {regLine}";
         }
 
+        public static double[] findLog(double[] arrayY)
+        {
+            arrayY = arrayY.Select(x => Math.Log10(x)).ToArray();
+            return arrayY;
+        }
     }
 }
