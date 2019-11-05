@@ -18,6 +18,9 @@ namespace ChoiceApp
         public double powerB1YonX { set; get; }
         public double powerB0YonX { set; get; }
 
+        public bool linearPlotEnabled { set; get; }
+        public bool expPlotEnabled { set; get; }
+        public bool powerPlotEnabled { set; get; }
 
         private double maxX { set; get; }
         private double minX { set; get; }
@@ -75,7 +78,7 @@ namespace ChoiceApp
         private PlotModel createPlotModel()
         {
             OxyThickness thickness = new OxyThickness(35, 70, 15, 40);
-            var plotModel = new PlotModel { Title = "OxyPlot Demo", PlotMargins= thickness };
+            var plotModel = new PlotModel { Title = "OxyPlot Demo", PlotMargins = thickness };
             plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom });
             plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left });
 
@@ -99,7 +102,7 @@ namespace ChoiceApp
 
             var series2 = new LineSeries
             {
-                Title = "Лінійна залежність",
+                Title = "Лінійна ",
                 StrokeThickness = 3,
                 LineStyle = LineStyle.Automatic,
                 MarkerType = MarkerType.None,
@@ -109,7 +112,7 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            for (double x = minX - 1; x < maxX + 1; x += 0.2)
+            for (double x = minX; x < maxX + 1; x += 0.2)
             {
                 double y = b0YonX + b1YonX * x;
                 series2.Points.Add(new DataPoint(x, y));
@@ -117,7 +120,7 @@ namespace ChoiceApp
 
             var series3 = new LineSeries
             {
-                Title = "Експоненційна зал",
+                Title = "Експоненційна",
                 StrokeThickness = 3,
                 LineStyle = LineStyle.Automatic,
                 MarkerType = MarkerType.None,
@@ -127,7 +130,7 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            for (double x = minX - 1; x < maxX + 1; x += 0.2)
+            for (double x = minX; x < maxX + 1; x += 0.2)
             {
                 double y = Math.Pow(10, expB1YonX * x + expB0YonX);
                 series3.Points.Add(new DataPoint(x, y));
@@ -136,7 +139,7 @@ namespace ChoiceApp
 
             var series4 = new LineSeries
             {
-                Title = "Статична зал",
+                Title = "Статична",
                 StrokeThickness = 3,
                 LineStyle = LineStyle.Automatic,
                 MarkerType = MarkerType.None,
@@ -146,7 +149,7 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            for (double x = minX - 1; x < maxX + 1; x += 0.2)
+            for (double x = minX ; x < maxX + 1; x += 0.2)
             {
                 double b = Math.Pow(10, powerB0YonX);  //b = a^x
                 double y = b* Math.Pow(x, powerB1YonX);
@@ -155,9 +158,9 @@ namespace ChoiceApp
                
             }
 
-            plotModel.Series.Add(series2);
-            plotModel.Series.Add(series3);
-            plotModel.Series.Add(series4);
+            if (linearPlotEnabled) { plotModel.Series.Add(series2); }
+            if (expPlotEnabled) { plotModel.Series.Add(series3); }
+            if (powerPlotEnabled) { plotModel.Series.Add(series4); }
             plotModel.Series.Add(series1);
             return plotModel;
         }

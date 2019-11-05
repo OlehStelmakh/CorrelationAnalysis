@@ -31,6 +31,9 @@ namespace ChoiceApp
         private double powerB1YonX { set; get; }
         private double powerB0YonX { set; get; }
 
+        private double rsq { set; get; }
+        private double expRsq { set; get; }
+        private double powerRsq { set; get; }
 
         public ThirdViewController(IntPtr handle) : base(handle)
         {
@@ -46,23 +49,20 @@ namespace ChoiceApp
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
-            if (segue.DestinationViewController is PlotViewController1)
+            if (segue.DestinationViewController is FourthViewController)
             {
-                var plotViewController1 = segue.DestinationViewController as PlotViewController1;
-                //plotViewController1.b1XonY = this.b1XonY;
-                //plotViewController1.b0XonY = this.b0XonY;
-            }
-            if (segue.DestinationViewController is PlotViewController2)
-            {
-                var plotViewController2 = segue.DestinationViewController as PlotViewController2;
-                plotViewController2.b1YonX = this.b1YonX;
-                plotViewController2.b0YonX = this.b0YonX;
-                plotViewController2.expB1YonX = this.expB1YonX;
-                plotViewController2.expB0YonX = this.expB0YonX;
-                plotViewController2.powerB1YonX = this.powerB1YonX;
-                plotViewController2.powerB0YonX = this.powerB0YonX;
-                plotViewController2.numbersX = this.numbersX;
-                plotViewController2.numbersY = this.numbersY;
+                var fourthViewController = segue.DestinationViewController as FourthViewController;
+                fourthViewController.b1YonX = this.b1YonX;
+                fourthViewController.b0YonX = this.b0YonX;
+                fourthViewController.expB1YonX = this.expB1YonX;
+                fourthViewController.expB0YonX = this.expB0YonX;
+                fourthViewController.powerB1YonX = this.powerB1YonX;
+                fourthViewController.powerB0YonX = this.powerB0YonX;
+                fourthViewController.numbersX = this.numbersX;
+                fourthViewController.numbersY = this.numbersY;
+                fourthViewController.rsq = this.rsq;
+                fourthViewController.expRsq = this.expRsq;
+                fourthViewController.powerRsq = this.powerRsq;
 
             }
             
@@ -80,7 +80,7 @@ namespace ChoiceApp
                 double meanOfX = CalculateFirstVariant.Mean(numbersX, LabelFirst, "x");
                 double meanOfY = CalculateFirstVariant.Mean(numbersY, LabelFirst, "y");
                 double r = CalculateFirstVariant.correlCoef(LabelSecond, numbersX, numbersY, meanOfX, meanOfY);
-                double rsq = CalculateFirstVariant.RSQ(LabelSecond, r);
+                rsq = CalculateFirstVariant.RSQ(LabelSecond, r);
                 //b1XonY = CalculateFirstVariant.findB1XonY(LabelFifth, numbersX, numbersY, meanOfX, meanOfY);
                 //b0XonY = CalculateFirstVariant.findB0(LabelFifth, meanOfX, meanOfY, b1XonY);
                 //CalculateFirstVariant.lineXonY(LabelSeventh, b1XonY, b0XonY);
@@ -92,7 +92,7 @@ namespace ChoiceApp
                 double[] newArrayY = CalculateFirstVariant.findLog(numbersY);
                 double meanOfNewY = CalculateFirstVariant.Mean(newArrayY, LabelFifth, "y");
                 double expR = CalculateFirstVariant.correlCoef(LabelSixth, numbersX, newArrayY, meanOfX, meanOfNewY);
-                double expRsq = CalculateFirstVariant.RSQ(LabelSixth, expR);
+                expRsq = CalculateFirstVariant.RSQ(LabelSixth, expR);
                 expB1YonX = CalculateFirstVariant.findB1YonX(LabelSeventh, numbersX, newArrayY, meanOfX, meanOfNewY);
                 expB0YonX = CalculateFirstVariant.findB0(LabelSeventh, meanOfNewY, meanOfX, expB1YonX);
                 CalculateFirstVariant.lineYonX(LabelEighth, expB1YonX, expB0YonX);
@@ -101,7 +101,7 @@ namespace ChoiceApp
                 double[] newArrayX = CalculateFirstVariant.findLog(numbersX);
                 double meanOfNewX = CalculateFirstVariant.Mean(newArrayX, LabelNineth, "x");
                 double powerR = CalculateFirstVariant.correlCoef(LabelTenth, newArrayX, newArrayY, meanOfNewX, meanOfNewY);
-                double powerRsq = CalculateFirstVariant.RSQ(LabelTenth, powerR);
+                powerRsq = CalculateFirstVariant.RSQ(LabelTenth, powerR);
                 powerB1YonX = CalculateFirstVariant.findB1YonX(LabelEleventh, newArrayX, newArrayY, meanOfNewX, meanOfNewY);
                 powerB0YonX = CalculateFirstVariant.findB0(LabelEleventh, meanOfNewY, meanOfNewX, powerB1YonX);
                 CalculateFirstVariant.lineYonX(LabelTwelfth, powerB1YonX, powerB0YonX);

@@ -53,12 +53,27 @@
 				<integer>7</integer>
 			</dict>
 		</array>
-		<key>29380</key>
+		<key>34551</key>
 		<array>
 			<dict>
 				<key>affected-objects</key>
 				<array>
-					<string>29380</string>
+					<string>34551</string>
+				</array>
+				<key>message</key>
+				<string>Push segues are deprecated since iOS 8.0</string>
+				<key>type</key>
+				<string>IBIssueTypeDeprecated</string>
+				<key>type-value</key>
+				<integer>7</integer>
+			</dict>
+		</array>
+		<key>34639</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>34639</string>
 				</array>
 				<key>message</key>
 				<string>Push segues are deprecated since iOS 8.0</string>

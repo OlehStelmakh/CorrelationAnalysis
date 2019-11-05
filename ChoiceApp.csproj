@@ -127,6 +127,7 @@
         <InterfaceDefinition Include="PlotViewController1.xib" />
         <InterfaceDefinition Include="PlotViewController2.xib" />
         <InterfaceDefinition Include="ThirdViewController.xib" />
+        <InterfaceDefinition Include="FourthViewController.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -159,6 +160,10 @@
         <Compile Include="Calculations\CalculateFirstVariant.cs" />
         <Compile Include="Calculations\CalculateSecondVariant.cs" />
         <Compile Include="Calculations\CalculateThirdVariant.cs" />
+        <Compile Include="FourthViewController.cs" />
+        <Compile Include="FourthViewController.designer.cs">
+          <DependentUpon>FourthViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

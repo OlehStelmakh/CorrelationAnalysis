@@ -9,6 +9,10 @@
       <LogicalName>PlotViewController2.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool/FourthViewController.nib">
+      <LogicalName>FourthViewController.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool/SecondViewController.nib">
       <LogicalName>SecondViewController.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -29,6 +33,16 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/UIViewController-210.nib">
       <LogicalName>Main.storyboardc/UIViewController-210.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/34485-view-34486.nib">
+      <LogicalName>Main.storyboardc/34485-view-34486.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc/UIViewController-34485.nib">
+      <LogicalName>Main.storyboardc/UIViewController-34485.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone12.3-13.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
