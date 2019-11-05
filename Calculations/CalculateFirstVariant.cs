@@ -18,7 +18,7 @@ namespace ChoiceApp.Calculations
             }
             mean = sumOf / amountOf;
             label.Hidden = false;
-            label.Text = $"Mean of {coord}: {Math.Round(mean, 5)}";
+            label.Text += $"Mean of {coord}: {Math.Round(mean, 5)}  ";
             return mean;
         }
 
@@ -39,7 +39,7 @@ namespace ChoiceApp.Calculations
             double denominator = Math.Sqrt(quadrateX * quadrateY);
             double r = numerator / denominator;
             label.Hidden = false;
-            label.Text = $"Correlation coef: {Math.Round(r, 5)}";
+            label.Text = $"Correl coef: {Math.Round(r, 5)}  ";
             return r;
         }
 
@@ -47,7 +47,7 @@ namespace ChoiceApp.Calculations
         {
             label.Hidden = false;
             double rsq = r * r;
-            label.Text = $"R-sq: {Math.Round(rsq, 5)}";
+            label.Text += $"R-sq: {Math.Round(rsq, 5)}";
             return rsq;
         }
 
@@ -101,14 +101,14 @@ namespace ChoiceApp.Calculations
 
         public static void lineYonX(UILabel label, double b1, double b0)
         {
-            string regLine = $"y={Math.Round(b0, 2)}+({Math.Round(b1, 2)})×x"; //TODO покращити вигляд
+            string regLine = $"y={Math.Round(b0, 3)}+({Math.Round(b1, 3)})×x"; //TODO покращити вигляд
             label.Hidden = false;
             label.Text = $"Y on X: {regLine}";
         }
 
         public static void lineXonY(UILabel label, double b1, double b0)
         {
-            string regLine = $"x={Math.Round(b0, 2)}+({Math.Round(b1, 2)})×y"; //TODO покращити вигляд
+            string regLine = $"x={Math.Round(b0, 3)}+({Math.Round(b1, 3)})×y"; //TODO покращити вигляд
             label.Hidden = false;
             label.Text = $"X on Y: {regLine}";
         }

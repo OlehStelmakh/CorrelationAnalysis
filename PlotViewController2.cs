@@ -11,10 +11,16 @@ namespace ChoiceApp
     {
         public double b0YonX { get; set; }
         public double b1YonX { get; set; }
-        public double newB1YonX { set; get; }
-        public double newB0YonX { set; get; }
+        public double expB1YonX { set; get; }
+        public double expB0YonX { set; get; }
         public double[] numbersX { set; get; }
         public double[] numbersY { set; get; }
+        public double powerB1YonX { set; get; }
+        public double powerB0YonX { set; get; }
+
+
+        private double maxX { set; get; }
+        private double minX { set; get; }
 
         public PlotViewController2(IntPtr handle) : base(handle)
         {
@@ -23,11 +29,14 @@ namespace ChoiceApp
 
         public override void ViewDidLoad()
         {
+            base.ViewDidLoad();
+            minX = findMinX(numbersX);
+            maxX = findMaxX(numbersX);
             this.View = new PlotView
             {
                 Model = createPlotModel(),
             };
-            base.ViewDidLoad();
+            
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -35,6 +44,32 @@ namespace ChoiceApp
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        private double findMinX(double[] arrayX) 
+        {
+            double min = arrayX[0];
+            for (int i=1; i<arrayX.Length; i++)
+            {
+                if (min > arrayX[i])
+                {
+                    min = arrayX[i];
+                }
+            }
+            return min;
+        }
+
+        private double findMaxX(double[] arrayX)
+        {
+            double max = arrayX[0];
+            for (int i = 1; i < arrayX.Length; i++)
+            {
+                if (max < arrayX[i])
+                {
+                    max = arrayX[i];
+                }
+            }
+            return max;
         }
 
         private PlotModel createPlotModel()
@@ -74,7 +109,7 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            for (double x = 0; x < 10; x += 0.2)
+            for (double x = minX - 1; x < maxX + 1; x += 0.2)
             {
                 double y = b0YonX + b1YonX * x;
                 series2.Points.Add(new DataPoint(x, y));
@@ -92,14 +127,37 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            for (double x=0; x<10; x+=0.2)
+            for (double x = minX - 1; x < maxX + 1; x += 0.2)
             {
-                double y = Math.Pow(10, newB1YonX * x + newB0YonX);
+                double y = Math.Pow(10, expB1YonX * x + expB0YonX);
                 series3.Points.Add(new DataPoint(x, y));
+                
             }
-            
+
+            var series4 = new LineSeries
+            {
+                Title = "Статична зал",
+                StrokeThickness = 3,
+                LineStyle = LineStyle.Automatic,
+                MarkerType = MarkerType.None,
+                MarkerSize = 5,
+                MarkerStroke = OxyColors.White,
+                MarkerFill = OxyColors.Automatic,
+                MarkerStrokeThickness = 1.5,
+            };
+
+            for (double x = minX - 1; x < maxX + 1; x += 0.2)
+            {
+                double b = Math.Pow(10, powerB0YonX);  //b = a^x
+                double y = b* Math.Pow(x, powerB1YonX);
+                series4.Points.Add(new DataPoint(x, y));
+
+               
+            }
+
             plotModel.Series.Add(series2);
             plotModel.Series.Add(series3);
+            plotModel.Series.Add(series4);
             plotModel.Series.Add(series1);
             return plotModel;
         }
