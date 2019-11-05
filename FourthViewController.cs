@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Foundation;
 using UIKit;
 
@@ -20,6 +21,12 @@ namespace ChoiceApp
         public double expRsq { set; get; }
         public double powerRsq { set; get; }
 
+        private double maxRSQ { set; get; }
+        private bool on { set; get; } = true;
+
+        public bool expLabelHidden { set; get; }
+        public bool powLabelHidden { set; get; }
+
         public FourthViewController(IntPtr handle) : base(handle)
         {
         }
@@ -28,12 +35,23 @@ namespace ChoiceApp
         {
             base.ViewDidLoad();
             mainInfo();
+            if (expLabelHidden)
+            {
+                SwitchExp.On = false;
+                SwitchExp.Enabled = false;
+            }
+            if (powLabelHidden)
+            {
+                SwitchPower.On = false;
+                SwitchPower.Enabled = false;
+            }
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
+            
             // Release any cached data, images, etc that aren't in use.
         }
 
@@ -52,9 +70,13 @@ namespace ChoiceApp
                 plotViewController2.numbersX = this.numbersX;
                 plotViewController2.numbersY = this.numbersY;
 
-                plotViewController2.linearPlotEnabled = SwitchLinear.On;
-                plotViewController2.expPlotEnabled = SwitchExp.On;
-                plotViewController2.powerPlotEnabled = SwitchPower.On;
+                if (on)
+                {
+                    plotViewController2.linearPlotEnabled = SwitchLinear.On;
+                    plotViewController2.expPlotEnabled = SwitchExp.On;
+                    plotViewController2.powerPlotEnabled = SwitchPower.On;
+                }
+                
                 
             }
 
@@ -63,22 +85,21 @@ namespace ChoiceApp
         public void mainInfo()
         {
             double[] rsqArray = { rsq, expRsq, powerRsq};
-            double max = 0;
             for (int i=0;i<rsqArray.Length; i++)
             {
-                if (max < rsqArray[i])
+                if (maxRSQ < rsqArray[i])
                 {
-                    max = rsqArray[i];
+                    maxRSQ = rsqArray[i];
                 }
             }
 
-            if (max > 0.7)
+            if (maxRSQ > 0.7 || maxRSQ < -0.7)
             {
-                if (Math.Abs(rsq - max) < 0.1)
+                if (Math.Abs(rsq - maxRSQ) < 0.1)
                 {
                     LabelMainInfo.Text = "According to the given data, linear dependence is most evident.";
                 }
-                else if (Math.Abs(expRsq - max) < 0.1)
+                else if (Math.Abs(expRsq - maxRSQ) < 0.1)
                 {
                     LabelMainInfo.Text = "According to the given data, exponential dependence is most evident.";
                 }
@@ -96,8 +117,73 @@ namespace ChoiceApp
             {
                 LabelMainInfo.Text = "No dependency reflects the relationship between the data.";
                 LabelMainInfo.TextColor = UIColor.SystemRedColor;
+                on = false;
+                ButtonAnswer.Enabled = false;
+                SwitchLinear.On = false;
+                SwitchLinear.Enabled = false;
+                SwitchExp.On = false;
+                SwitchExp.Enabled = false;
+                SwitchPower.On = false;
+                SwitchPower.Enabled = false;
+                
             }
 
+        }
+
+        partial void UIButton34688_TouchUpInside(UIButton sender)
+        {
+            if (!String.IsNullOrWhiteSpace(FieldForPredict.Text))
+            {
+                double x = readOneNumber(FieldForPredict);
+                if (Math.Abs(rsq - maxRSQ) < 0.00001)
+                {
+                    double y = b0YonX + b1YonX * x;
+                    LabelAnswer.Text = $"Predicted value: {Math.Round(y,3)} ";
+                }
+                else if (Math.Abs(expRsq - maxRSQ) < 0.00001)
+                {
+                    double y = Math.Pow(10, expB1YonX * x + expB0YonX);
+                    LabelAnswer.Text = $"Predicted value: {Math.Round(y,3)} ";
+                }
+                else
+                {
+                    double b = Math.Pow(10, powerB0YonX);  //b = a^x
+                    double y = b * Math.Pow(x, powerB1YonX);
+                    LabelAnswer.Text = $"Predicted value: {Math.Round(y,3)} ";
+                }
+                LabelAnswer.Hidden = false;
+            }
+            else {
+                LabelAnswer.Hidden = true;
+            }
+        }
+
+        public double readOneNumber(UITextField textField)
+        {
+            string[] array = textField.Text.Trim().Split(" ");
+            double[] numbers = array.Select(x => TryParseInTextField(x)).ToArray();
+            numbers = numbers.Where(x => Math.Abs(x - int.MinValue) > 0.1).ToArray();
+            if (numbers.Length > 1)
+            {
+                //LabelMessage.Text = "More than one value is entered in one of the fields. " +
+                //        "The first value will be applied.";
+                //LabelMessage.TextColor = UIColor.SystemRedColor;
+            }
+            return numbers[0];
+        }
+
+        public static double TryParseInTextField(string a)
+        {
+            double x;
+            try
+            {
+                x = Convert.ToDouble(double.Parse(a));
+                return x;
+            }
+            catch (FormatException)
+            {
+                return int.MinValue;
+            }
         }
     }
 }

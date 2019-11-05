@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{2AB6F0C9-071F-4FEA-B4AD-C00AA8BD4FF9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PlotViewController2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThirdViewController.cs">
     <Files>
       <File FileName="Main.storyboard" />
-      <File FileName="PlotViewController2.cs" Line="22" Column="9" />
-      <File FileName="FourthViewController.cs" Line="55" Column="37" />
+      <File FileName="PlotViewController2.cs" Line="154" Column="17" />
+      <File FileName="FourthViewController.cs" Line="81" Column="1" />
+      <File FileName="SecondViewController.cs" Line="168" Column="9" />
+      <File FileName="Calculations/CalculateFirstVariant.cs" Line="70" Column="49" />
+      <File FileName="ThirdViewController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +14,7 @@
           <Node name="ChoiceApp" expanded="True">
             <Node name="ChoiceApp" expanded="True">
               <Node name="Calculations" expanded="True" />
-              <Node name="PlotViewController2.cs" selected="True" />
+              <Node name="ThirdViewController.cs" selected="True" />
             </Node>
           </Node>
         </State>

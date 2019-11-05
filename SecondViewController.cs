@@ -177,8 +177,6 @@ namespace ChoiceApp
                 LabelMessage.TextColor = UIColor.SystemRedColor;
             }
             return numbers[0]; 
-            
-            
         }
 
         public static double TryParseInTextField(string a)

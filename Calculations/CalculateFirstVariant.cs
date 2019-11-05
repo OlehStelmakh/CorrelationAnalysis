@@ -18,7 +18,7 @@ namespace ChoiceApp.Calculations
             }
             mean = sumOf / amountOf;
             label.Hidden = false;
-            label.Text += $"Mean of {coord}: {Math.Round(mean, 5)}  ";
+            label.Text += $"Mean of {coord}: {Math.Round(mean, 2)}  ";
             return mean;
         }
 
@@ -39,7 +39,7 @@ namespace ChoiceApp.Calculations
             double denominator = Math.Sqrt(quadrateX * quadrateY);
             double r = numerator / denominator;
             label.Hidden = false;
-            label.Text = $"Correl coef: {Math.Round(r, 5)}  ";
+            label.Text = $"Correl coef: {Math.Round(r, 3)}  ";
             return r;
         }
 
@@ -47,7 +47,7 @@ namespace ChoiceApp.Calculations
         {
             label.Hidden = false;
             double rsq = r * r;
-            label.Text += $"R-sq: {Math.Round(rsq, 5)}";
+            label.Text += $"R-sq: {Math.Round(rsq, 3)}";
             return rsq;
         }
 

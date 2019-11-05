@@ -24,6 +24,10 @@ namespace ChoiceApp
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelExpDep { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelFifth { get; set; }
 
         [Outlet]
@@ -37,6 +41,10 @@ namespace ChoiceApp
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelNineth { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelPowDep { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -74,6 +82,11 @@ namespace ChoiceApp
                 LabelEleventh = null;
             }
 
+            if (LabelExpDep != null) {
+                LabelExpDep.Dispose ();
+                LabelExpDep = null;
+            }
+
             if (LabelFifth != null) {
                 LabelFifth.Dispose ();
                 LabelFifth = null;
@@ -92,6 +105,11 @@ namespace ChoiceApp
             if (LabelNineth != null) {
                 LabelNineth.Dispose ();
                 LabelNineth = null;
+            }
+
+            if (LabelPowDep != null) {
+                LabelPowDep.Dispose ();
+                LabelPowDep = null;
             }
 
             if (LabelSecond != null) {

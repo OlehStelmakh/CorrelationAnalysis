@@ -596,6 +596,8 @@
                         <outlet property="LabelTenth" destination="29668" id="name-outlet-29668"/>
                         <outlet property="LabelEleventh" destination="31672" id="name-outlet-31672"/>
                         <outlet property="LabelTwelfth" destination="31674" id="name-outlet-31674"/>
+                        <outlet property="LabelExpDep" destination="31153" id="name-outlet-31153"/>
+                        <outlet property="LabelPowDep" destination="31671" id="name-outlet-31671"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26525" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -680,6 +682,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="UIButton34688_TouchUpInside:" destination="34485" id="37776" eventType="touchUpInside"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="34691" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" hidden="YES" text="Predicted value:">
                                 <rect key="frame" x="52" y="419" width="282" height="21"/>
@@ -716,6 +721,8 @@
                         <outlet property="SwitchLinear" destination="35853" id="name-outlet-35853"/>
                         <outlet property="SwitchExp" destination="35854" id="name-outlet-35854"/>
                         <outlet property="SwitchPower" destination="35855" id="name-outlet-35855"/>
+                        <outlet property="FieldForPredict" destination="34687" id="name-outlet-34687"/>
+                        <outlet property="ButtonAnswer" destination="34688" id="name-outlet-34688"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34487" userLabel="First Responder" sceneMemberID="firstResponder"/>

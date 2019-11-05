@@ -16,6 +16,14 @@ namespace ChoiceApp
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ButtonAnswer { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField FieldForPredict { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelAnswer { get; set; }
 
         [Outlet]
@@ -38,8 +46,22 @@ namespace ChoiceApp
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwitch SwitchPower { get; set; }
 
+        [Action ("UIButton34688_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void UIButton34688_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (ButtonAnswer != null) {
+                ButtonAnswer.Dispose ();
+                ButtonAnswer = null;
+            }
+
+            if (FieldForPredict != null) {
+                FieldForPredict.Dispose ();
+                FieldForPredict = null;
+            }
+
             if (LabelAnswer != null) {
                 LabelAnswer.Dispose ();
                 LabelAnswer = null;

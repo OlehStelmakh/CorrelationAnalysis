@@ -153,6 +153,7 @@ namespace ChoiceApp
             {
                 double b = Math.Pow(10, powerB0YonX);  //b = a^x
                 double y = b* Math.Pow(x, powerB1YonX);
+                //double y = powerB0YonX * Math.Pow(x, powerB1YonX);
                 series4.Points.Add(new DataPoint(x, y));
 
                

@@ -35,6 +35,9 @@ namespace ChoiceApp
         private double expRsq { set; get; }
         private double powerRsq { set; get; }
 
+        private bool expLabelHidden { set; get; }
+        private bool powLabelHidden { set; get; }
+
         public ThirdViewController(IntPtr handle) : base(handle)
         {
         }
@@ -63,6 +66,8 @@ namespace ChoiceApp
                 fourthViewController.rsq = this.rsq;
                 fourthViewController.expRsq = this.expRsq;
                 fourthViewController.powerRsq = this.powerRsq;
+                fourthViewController.expLabelHidden = this.expLabelHidden;
+                fourthViewController.powLabelHidden = this.powLabelHidden;
 
             }
             
@@ -89,22 +94,43 @@ namespace ChoiceApp
                 CalculateFirstVariant.lineYonX(LabelFourth, b1YonX, b0YonX);
 
                 //експоненційна залежність
-                double[] newArrayY = CalculateFirstVariant.findLog(numbersY);
-                double meanOfNewY = CalculateFirstVariant.Mean(newArrayY, LabelFifth, "y");
-                double expR = CalculateFirstVariant.correlCoef(LabelSixth, numbersX, newArrayY, meanOfX, meanOfNewY);
-                expRsq = CalculateFirstVariant.RSQ(LabelSixth, expR);
-                expB1YonX = CalculateFirstVariant.findB1YonX(LabelSeventh, numbersX, newArrayY, meanOfX, meanOfNewY);
-                expB0YonX = CalculateFirstVariant.findB0(LabelSeventh, meanOfNewY, meanOfX, expB1YonX);
-                CalculateFirstVariant.lineYonX(LabelEighth, expB1YonX, expB0YonX);
+                if (!negativeNumbers(numbersY))
+                {
+                    double[] newArrayY = CalculateFirstVariant.findLog(numbersY);
+                    double meanOfNewY = CalculateFirstVariant.Mean(newArrayY, LabelFifth, "y");
+                    double expR = CalculateFirstVariant.correlCoef(LabelSixth, numbersX, newArrayY, meanOfX, meanOfNewY);
+                    expRsq = CalculateFirstVariant.RSQ(LabelSixth, expR);
+                    expB1YonX = CalculateFirstVariant.findB1YonX(LabelSeventh, numbersX, newArrayY, meanOfX, meanOfNewY);
+                    expB0YonX = CalculateFirstVariant.findB0(LabelSeventh, meanOfNewY, meanOfX, expB1YonX);
+                    CalculateFirstVariant.lineYonX(LabelEighth, expB1YonX, expB0YonX);
 
-                //power
-                double[] newArrayX = CalculateFirstVariant.findLog(numbersX);
-                double meanOfNewX = CalculateFirstVariant.Mean(newArrayX, LabelNineth, "x");
-                double powerR = CalculateFirstVariant.correlCoef(LabelTenth, newArrayX, newArrayY, meanOfNewX, meanOfNewY);
-                powerRsq = CalculateFirstVariant.RSQ(LabelTenth, powerR);
-                powerB1YonX = CalculateFirstVariant.findB1YonX(LabelEleventh, newArrayX, newArrayY, meanOfNewX, meanOfNewY);
-                powerB0YonX = CalculateFirstVariant.findB0(LabelEleventh, meanOfNewY, meanOfNewX, powerB1YonX);
-                CalculateFirstVariant.lineYonX(LabelTwelfth, powerB1YonX, powerB0YonX);
+                    if (!negativeNumbers(numbersX))
+                    {
+                        //power
+                        double[] newArrayX = CalculateFirstVariant.findLog(numbersX);
+                        double meanOfNewX = CalculateFirstVariant.Mean(newArrayX, LabelNineth, "x");
+                        double powerR = CalculateFirstVariant.correlCoef(LabelTenth, newArrayX, newArrayY, meanOfNewX, meanOfNewY);
+                        powerRsq = CalculateFirstVariant.RSQ(LabelTenth, powerR);
+                        powerB1YonX = CalculateFirstVariant.findB1YonX(LabelEleventh, newArrayX, newArrayY, meanOfNewX, meanOfNewY);
+                        powerB0YonX = CalculateFirstVariant.findB0(LabelEleventh, meanOfNewY, meanOfNewX, powerB1YonX);
+                        CalculateFirstVariant.lineYonX(LabelTwelfth, powerB1YonX, powerB0YonX);
+                    }
+                    else
+                    {
+                        LabelPowDep.Hidden = true;
+                        powLabelHidden = true;
+                    }
+                }
+                else
+                {
+                    LabelExpDep.Hidden = true;
+                    LabelPowDep.Hidden = true;
+                    expLabelHidden = true;
+                    powLabelHidden = true;
+                }
+                
+                
+                
 
             }
             else if (variantThatChecked == 2)
@@ -115,6 +141,17 @@ namespace ChoiceApp
             {
 
             }
+        }
+        private bool negativeNumbers(double[] array)
+        {
+            for (int i=0;i<array.Length;i++)
+            {
+                if (array[i]<0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
