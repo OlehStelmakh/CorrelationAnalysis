@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{2AB6F0C9-071F-4FEA-B4AD-C00AA8BD4FF9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThirdViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PlotViewController2.cs">
     <Files>
-      <File FileName="Main.storyboard" />
-      <File FileName="PlotViewController2.cs" Line="154" Column="17" />
-      <File FileName="FourthViewController.cs" Line="81" Column="1" />
-      <File FileName="SecondViewController.cs" Line="168" Column="9" />
-      <File FileName="Calculations/CalculateFirstVariant.cs" Line="70" Column="49" />
-      <File FileName="ThirdViewController.cs" Line="1" Column="1" />
+      <File FileName="PlotViewController2.cs" Line="1" Column="1" />
+      <File FileName="FourthViewController.cs" />
+      <File FileName="SecondViewController.cs" />
+      <File FileName="Calculations/CalculateFirstVariant.cs" />
+      <File FileName="ThirdViewController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,14 +13,14 @@
           <Node name="ChoiceApp" expanded="True">
             <Node name="ChoiceApp" expanded="True">
               <Node name="Calculations" expanded="True" />
-              <Node name="ThirdViewController.cs" selected="True" />
+              <Node name="PlotViewController2.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.ChoiceApp PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.77EBA9F5-E694-4E1C-8D14-EAAA241D087D" />
+  <MonoDevelop.Ide.ItemProperties.ChoiceApp PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D9BBFF45-1D94-459A-B47C-8DEF40AC3D47" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

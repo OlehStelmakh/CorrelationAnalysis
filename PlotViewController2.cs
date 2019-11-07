@@ -112,7 +112,7 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            for (double x = minX; x < maxX + 1; x += 0.2)
+            for (double x = minX; x < maxX; x += 0.002)
             {
                 double y = b0YonX + b1YonX * x;
                 series2.Points.Add(new DataPoint(x, y));
@@ -130,7 +130,7 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            for (double x = minX; x < maxX + 1; x += 0.2)
+            for (double x = minX; x < maxX ; x += 0.002)
             {
                 double y = Math.Pow(10, expB1YonX * x + expB0YonX);
                 series3.Points.Add(new DataPoint(x, y));
@@ -149,7 +149,7 @@ namespace ChoiceApp
                 MarkerStrokeThickness = 1.5,
             };
 
-            for (double x = minX ; x < maxX + 1; x += 0.2)
+            for (double x = minX ; x < maxX ; x += 0.002)
             {
                 double b = Math.Pow(10, powerB0YonX);  //b = a^x
                 double y = b* Math.Pow(x, powerB1YonX);
