@@ -84,7 +84,9 @@ namespace ChoiceApp
         {
             base.ViewDidLoad();
             makeVisibleTextFields();
-            bad("One or more fields is empty!");
+            if (firstVariantChecked) { bad("One or more fields is empty!"); }
+            else if (secondVarintChecked) { bad("This calculation variant under construction!"); }
+            else if (thirdVariandChecked) { bad("This calculation variant under construction!"); }
 
             // Perform any additional setup after loading the view, typically from a nib.
         }
@@ -115,6 +117,13 @@ namespace ChoiceApp
                 edit(LabelFifth, TextFieldFifth, "Mean x: ");
                 edit(LabelSixth, TextFieldSixth, "Mean y: ");
                 amountOfFields = 5;
+
+                TextFieldFirst.Enabled = false;
+                TextFieldThird.Enabled = false;
+                TextFieldFourth.Enabled = false;
+                TextFieldFifth.Enabled = false;
+                TextFieldSixth.Enabled = false;
+                bad("This calculation variant under construction!");
             }
             if (thirdVariandChecked)
             {
@@ -126,6 +135,15 @@ namespace ChoiceApp
                 edit(LabelSeventh, TextFieldSeventh, "Z-score x: ");
                 edit(LabelEighth, TextFieldEighth, "Z-score y: ");
                 amountOfFields = 7;
+
+                TextFieldFirst.Enabled = false;
+                TextFieldThird.Enabled = false;
+                TextFieldFourth.Enabled = false;
+                TextFieldFifth.Enabled = false;
+                TextFieldSixth.Enabled = false;
+                TextFieldSeventh.Enabled = false;
+                TextFieldEighth.Enabled = false;
+                bad("This calculation variant under construction!");
             }
             
         }
@@ -172,6 +190,7 @@ namespace ChoiceApp
             numbers = numbers.Where(x => Math.Abs(x - int.MinValue) > 0.1).ToArray();
             if (numbers.Length > 1)
             {
+                LabelMessage.Hidden = false;
                 LabelMessage.Text = "More than one value is entered in one of the fields. " +
                         "The first value will be applied.";
                 LabelMessage.TextColor = UIColor.SystemRedColor;
@@ -228,28 +247,29 @@ namespace ChoiceApp
                 }
                 else if (secondVarintChecked)
                 {
-                    this.Cov = readOneNumber(TextFieldFirst);
+                    /*this.Cov = readOneNumber(TextFieldFirst);
                     this.Sx = readOneNumber(TextFieldThird);
                     this.Sy = readOneNumber(TextFieldFourth);
                     this.MeanX = readOneNumber(TextFieldFifth);
-                    this.MeanY = readOneNumber(TextFieldSixth);
+                    this.MeanY = readOneNumber(TextFieldSixth);*/
 
                 }
                 else if (thirdVariandChecked)
                 {
-                    this.amount = Convert.ToInt32(readOneNumber(TextFieldFirst));
+                    /*this.amount = Convert.ToInt32(readOneNumber(TextFieldFirst));
                     this.Sx = readOneNumber(TextFieldThird);
                     this.Sy = readOneNumber(TextFieldFourth);
                     this.MeanX = readOneNumber(TextFieldFifth);
                     this.MeanY = readOneNumber(TextFieldSixth);
                     this.ZScoreX = readOneNumber(TextFieldSeventh);
-                    this.ZScoreY = readOneNumber(TextFieldEighth);
+                    this.ZScoreY = readOneNumber(TextFieldEighth);*/
                 }
             }
         }
 
         public void good()
         {
+            LabelMessage.Hidden = false;
             LabelMessage.Text = "Everything is good!";
             LabelMessage.TextColor = UIColor.SystemGreenColor;
             ButtonSubmit.Enabled = true;
@@ -257,6 +277,7 @@ namespace ChoiceApp
 
         public void bad(string message)
         {
+            LabelMessage.Hidden = false;
             LabelMessage.Text = message;
             LabelMessage.TextColor = UIColor.SystemRedColor;
             ButtonSubmit.Enabled = false;

@@ -93,13 +93,13 @@ namespace ChoiceApp
                 }
             }
 
-            if (maxRSQ > 0.7 || maxRSQ < -0.7)
+            if (maxRSQ > 0.6 || maxRSQ < -0.6)
             {
-                if (Math.Abs(rsq - maxRSQ) < 0.1)
+                if (Math.Abs(rsq - maxRSQ) < 0.0001)
                 {
                     LabelMainInfo.Text = "According to the given data, linear dependence is most evident.";
                 }
-                else if (Math.Abs(expRsq - maxRSQ) < 0.1)
+                else if (Math.Abs(expRsq - maxRSQ) < 0.0001)
                 {
                     LabelMainInfo.Text = "According to the given data, exponential dependence is most evident.";
                 }
@@ -135,20 +135,29 @@ namespace ChoiceApp
             if (!String.IsNullOrWhiteSpace(FieldForPredict.Text))
             {
                 double x = readOneNumber(FieldForPredict);
-                if (Math.Abs(rsq - maxRSQ) < 0.00001)
+                if (x==double.MinValue)
+                {
+                    LabelAnswer.TextColor = UIColor.SystemRedColor;
+                    LabelAnswer.Text = "Number not found! Try again.";
+                }
+                else if (Math.Abs(rsq - maxRSQ) < 0.0001)
                 {
                     double y = b0YonX + b1YonX * x;
+                    LabelAnswer.TextColor = UIColor.Black;
                     LabelAnswer.Text = $"Predicted value: {Math.Round(y,3)} ";
                 }
-                else if (Math.Abs(expRsq - maxRSQ) < 0.00001)
+                else if (Math.Abs(expRsq - maxRSQ) < 0.0001)
                 {
+
                     double y = Math.Pow(10, expB1YonX * x + expB0YonX);
+                    LabelAnswer.TextColor = UIColor.Black;
                     LabelAnswer.Text = $"Predicted value: {Math.Round(y,3)} ";
                 }
                 else
                 {
                     double b = Math.Pow(10, powerB0YonX);  //b = a^x
                     double y = b * Math.Pow(x, powerB1YonX);
+                    LabelAnswer.TextColor = UIColor.Black;
                     LabelAnswer.Text = $"Predicted value: {Math.Round(y,3)} ";
                 }
                 LabelAnswer.Hidden = false;
@@ -163,13 +172,14 @@ namespace ChoiceApp
             string[] array = textField.Text.Trim().Split(" ");
             double[] numbers = array.Select(x => TryParseInTextField(x)).ToArray();
             numbers = numbers.Where(x => Math.Abs(x - int.MinValue) > 0.1).ToArray();
-            if (numbers.Length > 1)
+            if (numbers.Length >= 1)
             {
+                return numbers[0];
                 //LabelMessage.Text = "More than one value is entered in one of the fields. " +
                 //        "The first value will be applied.";
                 //LabelMessage.TextColor = UIColor.SystemRedColor;
             }
-            return numbers[0];
+            return double.MinValue;
         }
 
         public static double TryParseInTextField(string a)

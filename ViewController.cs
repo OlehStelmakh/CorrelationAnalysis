@@ -14,6 +14,7 @@ namespace ChoiceApp
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            ButtonFirstView.Enabled = false;
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
