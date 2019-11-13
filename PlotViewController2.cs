@@ -102,7 +102,7 @@ namespace ChoiceApp
 
             var series2 = new LineSeries
             {
-                Title = "Лінійна ",
+                Title = "Linear",
                 StrokeThickness = 3,
                 LineStyle = LineStyle.Automatic,
                 MarkerType = MarkerType.None,
@@ -120,7 +120,7 @@ namespace ChoiceApp
 
             var series3 = new LineSeries
             {
-                Title = "Експоненційна",
+                Title = "Exponential",
                 StrokeThickness = 3,
                 LineStyle = LineStyle.Automatic,
                 MarkerType = MarkerType.None,
@@ -139,7 +139,7 @@ namespace ChoiceApp
 
             var series4 = new LineSeries
             {
-                Title = "Статична",
+                Title = "Power",
                 StrokeThickness = 3,
                 LineStyle = LineStyle.Automatic,
                 MarkerType = MarkerType.None,

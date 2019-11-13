@@ -91,7 +91,7 @@ namespace ChoiceApp
                 //CalculateFirstVariant.lineXonY(LabelSeventh, b1XonY, b0XonY);
                 b1YonX = CalculateFirstVariant.findB1YonX(LabelThird, numbersX, numbersY, meanOfX, meanOfY);
                 b0YonX = CalculateFirstVariant.findB0(LabelThird, meanOfY, meanOfX, b1YonX);
-                CalculateFirstVariant.lineYonX(LabelFourth, b1YonX, b0YonX);
+                CalculateFirstVariant.lineYonX(LabelFourth, b1YonX, b0YonX, "linear");
 
                 //експоненційна залежність
                 if (!negativeNumbers(numbersY))
@@ -102,7 +102,7 @@ namespace ChoiceApp
                     expRsq = CalculateFirstVariant.RSQ(LabelSixth, expR);
                     expB1YonX = CalculateFirstVariant.findB1YonX(LabelSeventh, numbersX, newArrayY, meanOfX, meanOfNewY);
                     expB0YonX = CalculateFirstVariant.findB0(LabelSeventh, meanOfNewY, meanOfX, expB1YonX);
-                    CalculateFirstVariant.lineYonX(LabelEighth, expB1YonX, expB0YonX);
+                    CalculateFirstVariant.lineYonX(LabelEighth, expB1YonX, expB0YonX, "exp");
 
                     if (!negativeNumbers(numbersX))
                     {
@@ -113,7 +113,7 @@ namespace ChoiceApp
                         powerRsq = CalculateFirstVariant.RSQ(LabelTenth, powerR);
                         powerB1YonX = CalculateFirstVariant.findB1YonX(LabelEleventh, newArrayX, newArrayY, meanOfNewX, meanOfNewY);
                         powerB0YonX = CalculateFirstVariant.findB0(LabelEleventh, meanOfNewY, meanOfNewX, powerB1YonX);
-                        CalculateFirstVariant.lineYonX(LabelTwelfth, powerB1YonX, powerB0YonX);
+                        CalculateFirstVariant.lineYonX(LabelTwelfth, powerB1YonX, powerB0YonX, "power");
                     }
                     else
                     {

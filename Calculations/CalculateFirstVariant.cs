@@ -99,16 +99,29 @@ namespace ChoiceApp.Calculations
             return b0;
         }
 
-        public static void lineYonX(UILabel label, double b1, double b0)
+        public static void lineYonX(UILabel label, double b1, double b0, string dependency)
         {
-            string regLine = $"y={Math.Round(b0, 3)}+({Math.Round(b1, 3)})×x"; //TODO покращити вигляд
+            string regLine = String.Empty;
+            if (dependency == "linear")
+            {
+                regLine = $"y={Math.Round(b0, 1)}+({Math.Round(b1, 1)})×x"; //TODO покращити вигляд
+            }
+            else if (dependency=="exp")
+            {
+                regLine = $"y=10^({Math.Round(b1,2)}*x+{Math.Round(b0,2)})";
+            }
+            else if (dependency=="power")
+            {
+                regLine = $"y={Math.Round(Math.Pow(10, b0),2)}×x^({Math.Round(b1,2)})";
+            }
+            
             label.Hidden = false;
-            label.Text = $"Y on X: {regLine}";
+            label.Text = ($"Y on X: {regLine}");
         }
 
         public static void lineXonY(UILabel label, double b1, double b0)
         {
-            string regLine = $"x={Math.Round(b0, 3)}+({Math.Round(b1, 3)})×y"; //TODO покращити вигляд
+            string regLine = $"x={Math.Round(b0, 1)}+({Math.Round(b1, 1)})×y"; //TODO покращити вигляд
             label.Hidden = false;
             label.Text = $"X on Y: {regLine}";
         }

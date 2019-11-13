@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{2AB6F0C9-071F-4FEA-B4AD-C00AA8BD4FF9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Main.storyboard">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SecondViewController.cs">
     <Files>
       <File FileName="PlotViewController2.cs" Line="113" Column="15" />
       <File FileName="FourthViewController.cs" />
-      <File FileName="SecondViewController.cs" />
+      <File FileName="SecondViewController.cs" Line="229" Column="50" />
       <File FileName="Calculations/CalculateFirstVariant.cs" />
       <File FileName="ThirdViewController.cs" />
       <File FileName="Main.storyboard" />
@@ -16,8 +16,7 @@
           <Node name="ChoiceApp" expanded="True">
             <Node name="ChoiceApp" expanded="True">
               <Node name="Calculations" expanded="True" />
-              <Node name="Resources" expanded="True" />
-              <Node name="Main.storyboard" selected="True" />
+              <Node name="SecondViewController.cs" selected="True" />
             </Node>
           </Node>
         </State>
