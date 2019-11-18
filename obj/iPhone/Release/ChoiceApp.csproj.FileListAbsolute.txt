@@ -1,0 +1,14 @@
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Release/ChoiceApp.exe
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Release/OxyPlot.dll
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Release/OxyPlot.pdb
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Release/OxyPlot.Xamarin.iOS.dll
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Release/Xamarin.Essentials.dll
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Release/Xamarin.Essentials.pdb
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Release/ibtool/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Release/actool/_PartialAppManifest.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Release/actool/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Release/coremlc/_PartialAppManifest.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Release/coremlc/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Release/optimized/
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Release/ChoiceApp.csproj.CopyComplete
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Release/ChoiceApp.exe

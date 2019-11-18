@@ -1,0 +1,17 @@
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Debug/ChoiceApp.exe
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Debug/ChoiceApp.pdb
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Debug/OxyPlot.dll
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Debug/OxyPlot.pdb
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Debug/OxyPlot.Xamarin.iOS.dll
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Debug/Xamarin.Essentials.dll
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/bin/iPhone/Debug/Xamarin.Essentials.pdb
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/device-builds/iphone8.1-13.1.3/ibtool/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/device-builds/iphone8.1-13.1.3/actool/_PartialAppManifest.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/device-builds/iphone8.1-13.1.3/actool/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/device-builds/iphone8.1-13.1.3/coremlc/_PartialAppManifest.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/device-builds/iphone8.1-13.1.3/coremlc/_BundleResourceWithLogicalName.items
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/device-builds/iphone8.1-13.1.3/optimized/
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/ChoiceApp.csprojAssemblyReference.cache
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/ChoiceApp.csproj.CopyComplete
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/ChoiceApp.exe
+/Users/olehstelmakh/Projects/ChoiceApp2/CorrelationAnalysis/obj/iPhone/Debug/ChoiceApp.pdb
